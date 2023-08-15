@@ -21,7 +21,7 @@
 - [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
-# 📖 [Ruby and Rails Group Project - Blog App] <a name="about-project"></a>
+# 📖 [Ruby and Rails Project - Blog App] <a name="about-project"></a>
 
 **[Description]**
 

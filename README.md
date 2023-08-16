@@ -6,15 +6,13 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -41,17 +39,9 @@ The application provides a variety of features including:
 - User authentication and authorization
 - CRUD operations for posts
 - Commenting and liking posts
-- API endpoints
 - Integration with database and models
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-## 🚀 Live Demo <a name="live-demo"></a>
-
-- [Live Demo Link] Coming soon(#)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -101,6 +91,14 @@ rails server
 
 <!-- CONTRIBUTING -->
 
+ ## 🔭 Future Features <a name="future-features"></a>
+
+- Add API endpoints.🚀
+-  Integration specs for Views👌
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
@@ -132,4 +130,3 @@ Gratitude to all contributors and educators for the invaluable resources.
 This project is [MIT](./LICENSE) licensed.
 
 <p align="right">(<a href="#read
-

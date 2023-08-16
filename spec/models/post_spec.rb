@@ -23,19 +23,18 @@ RSpec.describe Post, type: :model do
 
   it 'increments the author posts_counter by 1' do
     author = User.create!(name: 'John Doe', posts_counter: 0)
-    post = Post.new(title: 'Title', comments_counter: 0, likes_counter: 0, author: author)
+    post = Post.new(title: 'Title', comments_counter: 0, likes_counter: 0, author:)
     expect { post.save! }.to change { author.reload.posts_counter }.by(1)
   end
 
   it 'returns the five most recent comments' do
     author = User.create!(name: 'John Doe', posts_counter: 0)
-    post = Post.create!(title: 'Title', comments_counter: 0, likes_counter: 0, author: author)
-    older_comments = 6.times.map { Comment.create!(post: post, text: 'Old comment', author: author) }
-    recent_comment = Comment.create!(post: post, text: 'Recent comment', author: author)
-  
+    post = Post.create!(title: 'Title', comments_counter: 0, likes_counter: 0, author:)
+    older_comments = 6.times.map { Comment.create!(post:, text: 'Old comment', author:) }
+    recent_comment = Comment.create!(post:, text: 'Recent comment', author:)
+
     expect(post.five_most_recent_comments).to include(recent_comment)
     expect(post.five_most_recent_comments.length).to eq(5)
     expect(post.five_most_recent_comments).to_not include(older_comments.first)
   end
-  
 end

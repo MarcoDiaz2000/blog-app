@@ -13,7 +13,9 @@ RSpec.describe User, type: :model do
 
   it 'returns three most recent posts' do
     user = User.create!(name: 'John', posts_counter: 0)
-    old_posts = 3.times.map { Post.create!(author: user, title: 'Old post', comments_counter: 0, likes_counter: 0, created_at: 1.day.ago) }
+    3.times.map do
+      Post.create!(author: user, title: 'Old post', comments_counter: 0, likes_counter: 0, created_at: 1.day.ago)
+    end
     new_posts = 3.times.map { Post.create!(author: user, title: 'New post', comments_counter: 0, likes_counter: 0) }
 
     expect(user.three_most_recent_posts).to eq new_posts.reverse

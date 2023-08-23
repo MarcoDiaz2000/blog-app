@@ -19,14 +19,14 @@
 .user-photo {
   height: 100px;
   width: 100px;
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
 }
 
 .user-info {
   margin-left: 10px;
   height: 100px;
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
   flex-grow: 1;
   display: flex;
@@ -49,7 +49,7 @@
 .bio-row {
   max-width: 500px;
   margin: 20px auto;
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
   padding: 10px;
 }
@@ -66,7 +66,7 @@
 .post-row {
   max-width: 500px;
   margin: 20px auto;
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
   padding: 10px;
 }
@@ -110,7 +110,7 @@
 .comments-container {
   max-width: 500px;
   margin: -11px auto 20px;
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
   padding: 10px;
 }
@@ -130,15 +130,7 @@
 .post-detail-row {
   max-width: 500px;
   margin: 20px auto;
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-
-.post-detail-row {
-  max-width: 500px;
-  margin: 20px auto;
-  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
   border: 1px solid #ccc;
   padding: 10px;
 }
@@ -160,10 +152,6 @@
   font-weight: bold;
   padding-left: 5px;
   padding-right: 5px;
-}
-
-.post-stats {
-  font-size: small;
 }
 
 .post-content {

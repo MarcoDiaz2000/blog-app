@@ -21,3 +21,18 @@
     </div>
   <% end %>
 </div>
+
+<%= form_with(model: [ @user, @post, @post.comments.new ], local: true) do |form| %>
+  <div class="field">
+    <%= form.label :text, "Comments" %>
+    <%= form.text_area :text, class: "custom-input", placeholder: "Write your comment here" %>
+  </div>
+  <%= form.submit "Publish Comment", class: "custom-button" %>
+<% end %>
+
+<%= form_with url: user_post_likes_path(@post.author, @post) do |form| %>
+  <%= form.submit 'Like', class: 'like_button' %>
+<% end %>
+<% flash.each do |key, message| %>
+  <div class="<%= key %>"><%= message %></div>
+<% end %>

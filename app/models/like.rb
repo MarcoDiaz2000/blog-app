@@ -7,4 +7,7 @@ class Like < ApplicationRecord
   def update_likes_counter
     post.increment!(:likes_counter)
   end
+
+  validates :author_id, uniqueness: { scope: :post_id }
+
 end

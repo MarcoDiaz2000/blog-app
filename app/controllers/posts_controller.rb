@@ -7,6 +7,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @user = User.find(@post.author_id)
     @comments = @post.comments
+    @current_like = @post.likes.find_by(author_id: current_user.id)
   end
 
   def new

@@ -1,0 +1,159 @@
+.user-photo img {
+  width: 100px;
+  height: 100px;
+}
+
+.user-row-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.user-row {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  margin-bottom: 20px;
+  max-width: 500px;
+}
+
+.user-photo {
+  height: 100px;
+  width: 100px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+}
+
+.user-info {
+  margin-left: 10px;
+  height: 100px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.user-info h2 {
+  margin: 0;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.post-counter {
+  font-size: small;
+  text-align: right;
+  padding: 10px;
+}
+
+.bio-row {
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.bio-row h2 {
+  margin: 0;
+  font-weight: bold;
+}
+
+.bio-row p {
+  margin: 10px 0;
+}
+
+.post-row {
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.post-row h3 {
+  margin: 0;
+  font-weight: bold;
+}
+
+.post-row p {
+  margin: 10px 0;
+}
+
+.post-stats {
+  text-align: right;
+  font-size: small;
+}
+
+.post-link {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.see-all-posts-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  max-width: 200px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.see-all-posts-btn:hover {
+  background-color: #0056b3;
+}
+
+.comments-container {
+  max-width: 500px;
+  margin: -11px auto 20px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.comment {
+  margin: 5px 0;
+}
+
+.comment-author {
+  font-weight: bold;
+}
+
+.comment-text {
+  margin-left: 10px;
+}
+
+.post-detail-row {
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.post-title {
+  font-size: medium;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title-author {
+  display: flex;
+  align-items: center;
+}
+
+.author-name,
+.post-name {
+  font-weight: bold;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.post-content {
+  margin: 10px 0;
+}

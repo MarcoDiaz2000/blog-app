@@ -1,1 +1,36 @@
 <h1>Here is a list of posts for a given user</h1>
+<%= link_to user_path(@user), class: "user-row-link" do %>
+  <div class="user-row">
+    <div class="user-photo">
+      <%= image_tag @user.photo %>
+    </div>
+    <div class="user-info">
+      <h2><%= @user.name %></h2>
+      <div class="post-counter">Number of posts: <%= @user.posts.count %></div>
+    </div>
+  </div>
+<% end %>
+
+<% @user.three_most_recent_posts.each do |post| %>
+  <%= link_to user_post_path(@user, post), class: "post-link" do %>
+    <div class="post-row">
+      <h3><%= post.title %></h3>
+      <p><%= truncate(post.text, length: 50) %></p>
+      <div class="post-stats">
+        <span>Comments: <%= post.comments.count %></span>
+        <span>Likes: <%= post.likes.count %></span>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="comments-container">
+    <% post.five_most_recent_comments.each do |comment| %>
+      <div class="comment">
+        <span class="comment-author"><%= comment.author.name %>:</span>
+        <span class="comment-text"><%= comment.text %></span>
+      </div>
+    <% end %>
+  </div>
+<% end %>
+
+<%= link_to 'Pagination', user_posts_path(@user), class: 'see-all-posts-btn' %>

@@ -1,1 +1,23 @@
 <h1>Here is detail of a post for a specific user</h1>
+<div class="post-detail-row">
+  <div class="post-title">
+    <div class="title-author">
+      <span class="post-name"><%= @post.title %></span> by <span class="author-name"><%= @user.name %></span>
+    </div>
+    <div class="post-stats">
+      Comments: <%= @post.comments.count %> | Likes: <%= @post.likes.count %>
+    </div>
+  </div>
+  <div class="post-content">
+    <%= @post.text %>
+  </div>
+</div>
+
+<div class="comments-container">
+  <% @comments.each do |comment| %>
+    <div class="comment">
+      <span class="comment-author"><%= comment.author.name %>:</span>
+      <span class="comment-text"><%= comment.text %></span>
+    </div>
+  <% end %>
+</div>

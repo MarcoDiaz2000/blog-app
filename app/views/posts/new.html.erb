@@ -1,0 +1,11 @@
+<%= form_with model: [current_user, @post], local: true, html: { class: "custom-form" } do |form| %>
+  <div class="form-field">
+    <%= form.label :title, "Title" %>
+    <%= form.text_field :title, class: "custom-input", placeholder: "Enter the title of the post" %>
+  </div>
+  <div class="form-field">
+    <%= form.label :text, "Text" %>
+    <%= form.text_area :text, class: "custom-input", placeholder: "Enter the content of the post" %>
+  </div>
+  <%= form.submit "Create Post", class: "custom-button" %>
+<% end %>

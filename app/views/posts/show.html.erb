@@ -15,6 +15,7 @@
 
 <div class="comments-container">
   <% @comments.each do |comment| %>
+  <%= "Comments" %>
     <div class="comment">
       <span class="comment-author"><%= comment.author.name %>:</span>
       <span class="comment-text"><%= comment.text %></span>
@@ -23,15 +24,15 @@
 </div>
 
 <%= form_with(model: [ @user, @post, @post.comments.new ], local: true) do |form| %>
-  <div class="field">
-    <%= form.label :text, "Comments" %>
+  <div class="post-detail-row">
+    <%= form.label :text, "Publish your Comment" %>
     <%= form.text_area :text, class: "custom-input", placeholder: "Write your comment here" %>
   </div>
   <%= form.submit "Publish Comment", class: "custom-button" %>
 <% end %>
 
 <%= form_with url: user_post_likes_path(@post.author, @post) do |form| %>
-  <%= form.submit 'Like', class: 'like_button' %>
+  <%= form.submit 'Like', class: 'custom-button' %>
 <% end %>
 <% flash.each do |key, message| %>
   <div class="<%= key %>"><%= message %></div>

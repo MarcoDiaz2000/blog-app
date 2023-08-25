@@ -4,6 +4,7 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
 }
 
 .form-field {
@@ -11,10 +12,11 @@
 }
 
 .custom-input {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
 }
 
 .custom-button {
@@ -25,7 +27,7 @@
   border-radius: 3px;
   cursor: pointer;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 .custom-button:hover {

@@ -33,4 +33,6 @@
   </div>
 <% end %>
 
+<%= link_to 'Create a new post', new_user_post_path(@user), class: 'see-all-posts-btn' %>
+
 <%= link_to 'Pagination', user_posts_path(@user), class: 'see-all-posts-btn' %>

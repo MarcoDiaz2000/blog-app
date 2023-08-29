@@ -18,3 +18,11 @@ RSpec.feature "User Posts index page", type: :feature do
     visit user_posts_path(@user)
     expect(page).to have_content(@user.name)
   end
+scenario "I can see the number of posts the user has written" do
+    visit user_posts_path(@user)
+    expect(page).to have_content("Number of posts: 5")
+  end
+  scenario "I can see a post's title" do
+    visit user_posts_path(@user)
+    expect(page).to have_content("Post 5")
+  end

@@ -14,3 +14,7 @@ RSpec.feature "User Posts index page", type: :feature do
     visit user_posts_path(@user)
     expect(page).to have_css("img[src*='#{@user.photo}']")
   end
+ scenario "I can see the user's username" do
+    visit user_posts_path(@user)
+    expect(page).to have_content(@user.name)
+  end

@@ -38,3 +38,17 @@ scenario "I can see the number of posts the user has written" do
     visit user_posts_path(@user, @post2)
     expect(page).to have_content("Comments: 0")
   end
+scenario "I can see how many likes a post has" do
+    visit user_posts_path(@user)
+    expect(page).to have_content("Likes: 0")
+  end
+  scenario "I can see a section for pagination if there are more posts than fit on the view" do
+    visit user_posts_path(@user)
+    expect(page).to have_selector(".pagination")
+  end
+  scenario "When I click on a post, it redirects me to that post's show page" do
+    visit user_posts_path(@user)
+    click_link("Post 5")
+    expect(page.current_path).to eq(user_post_path(@user, @post5))
+  end
+end

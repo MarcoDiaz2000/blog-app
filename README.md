@@ -7,7 +7,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
 - [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
+  - [Setup](#setup) 
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Usage](#usage)

@@ -13,7 +13,6 @@ RSpec.feature 'User index page', type: :feature do
                          photo: 'https://image.com/image.jpg', bio: 'Text for Bio', posts_counter: 0)
   end
 
-
   scenario 'I can see the username of all other users' do
     visit users_path
 

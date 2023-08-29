@@ -24,7 +24,6 @@ RSpec.feature 'Post show page', type: :feature do
   end
 end
 
-
 RSpec.feature 'Post show page', type: :feature do
   before do
     @user = User.create(name: 'Marco', photo: 'https://image.com/image.jpg', bio: 'Text for Bio', posts_counter: 0)

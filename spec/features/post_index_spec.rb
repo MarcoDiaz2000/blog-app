@@ -26,3 +26,15 @@ scenario "I can see the number of posts the user has written" do
     visit user_posts_path(@user)
     expect(page).to have_content("Post 5")
   end
+ scenario "I can see some of the post's body" do
+    visit user_posts_path(@user)
+    expect(page).to have_content("Text for post...")
+  end
+  scenario "I can see the first comments on a post" do
+    visit user_post_path(@user, @post1)
+    expect(page).to have_content("comment 1")
+  end
+  scenario "I can see how many comments a post has" do
+    visit user_posts_path(@user, @post2)
+    expect(page).to have_content("Comments: 0")
+  end

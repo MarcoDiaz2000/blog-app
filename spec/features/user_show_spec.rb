@@ -27,11 +27,14 @@ RSpec.feature 'User show page', type: :feature do
     visit user_path(@user)
     expect(page).to have_content(@user.bio)
   end
+end
 
-  scenario "I can see the user's first 3 posts" do
-    visit user_path(@user)
-    @user.three_most_recent_posts.each do |post|
-      expect(page).to have_content(post.title)
+
+RSpec.feature 'User show page', type: :feature do
+  before do
+    @user = User.create(name: 'Marco', photo: 'https://image.com/image.jpg', bio: 'Text for Bio', posts_counter: 0)
+    5.times do |i|
+      Post.create(title: "Post #{i + 1}", author: @user, comments_counter: 0, likes_counter: 0)
     end
   end
 
@@ -53,10 +56,10 @@ RSpec.feature 'User show page', type: :feature do
     expect(page.current_path).to eq(user_posts_path(@user))
   end
 
-  scenario "I can see only the user's three most recent posts" do
+  scenario "I can see the user's first 3 posts" do
     visit user_path(@user)
-    displayed_posts = all('.post-row h3').map(&:text)
-    expected_posts = @user.three_most_recent_posts.map(&:title)
-    expect(displayed_posts).to match_array(expected_posts)
+    @user.three_most_recent_posts.each do |post|
+      expect(page).to have_content(post.title)
+    end
   end
 end

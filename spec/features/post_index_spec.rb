@@ -10,3 +10,7 @@ RSpec.feature "User Posts index page", type: :feature do
     @comment1 = Comment.create(author: @user, post: @post1, text: 'comment 1')
     @comment2 = Comment.create(author: @user, post: @post1, text: 'comment 2')
   end
+ scenario "I can see the user's profile picture" do
+    visit user_posts_path(@user)
+    expect(page).to have_css("img[src*='#{@user.photo}']")
+  end

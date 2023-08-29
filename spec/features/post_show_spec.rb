@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "Post show page", type: :feature do
   before do
-    @user = User.create(name: "Marco", photo: 'https://...', bio: 'Text for Bio', posts_counter: 0)
+    @user = User.create(name: "Marco", photo: 'https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg', bio: 'Text for Bio', posts_counter: 0)
     @post = Post.create(title: "Post 1", text: 'Text for post...', author: @user, comments_counter: 0, likes_counter: 0)
     
     @comment1 = Comment.create(author: @user, post: @post, text: 'comment 1')

@@ -1,7 +1,7 @@
 require 'rails_helper'
 RSpec.feature "User Posts index page", type: :feature do
   before do
-    @user = User.create(name: "Marco", photo: 'https://...', bio: 'Text for Bio', posts_counter: 0)
+    @user = User.create(name: "Marco", photo: 'https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg', bio: 'Text for Bio', posts_counter: 0)
     @post1 = Post.create(title: "Post 1", text: 'Text for post...', author: @user, comments_counter: 0, likes_counter: 0)
     @post2 = Post.create(title: "Post 2", text: 'Text for post...', author: @user, comments_counter: 0, likes_counter: 0)
     @post3 = Post.create(title: "Post 3", text: 'Text for post...', author: @user, comments_counter: 0, likes_counter: 0)
@@ -51,4 +51,23 @@ scenario "I can see how many likes a post has" do
     click_link("Post 5")
     expect(page.current_path).to eq(user_post_path(@user, @post5))
   end
+
+  scenario "I can see only the user's three most recent posts" do
+    visit user_posts_path(@user)
+  
+    displayed_posts = all('.post-row h3').map(&:text)
+    expected_posts = @user.three_most_recent_posts.map(&:title)
+  
+    expect(displayed_posts).to match_array(expected_posts)
+  end
+
+  scenario "I can see only the five most recent comments for a post" do
+    visit user_post_path(@user, @post1)
+  
+    displayed_comments = all('.comment .comment-text').map(&:text)
+    expected_comments = @post1.five_most_recent_comments.map(&:text)
+  
+    expect(displayed_comments).to match_array(expected_comments)
+  end
+  
 end

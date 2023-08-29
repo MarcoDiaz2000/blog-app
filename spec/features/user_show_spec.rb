@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "User show page", type: :feature do
   before do
-    @user = User.create(name: "Marco", photo: 'https://...', bio: 'Text for Bio', posts_counter: 0)
+    @user = User.create(name: "Marco", photo: 'https://d500.epimg.net/cincodias/imagenes/2016/07/04/lifestyle/1467646262_522853_1467646344_noticia_normal.jpg', bio: 'Text for Bio', posts_counter: 0)
   
     5.times do |i|
       Post.create(title: "Post #{i+1}", author: @user, comments_counter: 0, likes_counter: 0)
@@ -60,4 +60,14 @@ RSpec.feature "User show page", type: :feature do
 
     expect(page.current_path).to eq(user_posts_path(@user))
   end
+
+  scenario "I can see only the user's three most recent posts" do
+    visit user_path(@user)
+  
+    displayed_posts = all('.post-row h3').map(&:text)
+    expected_posts = @user.three_most_recent_posts.map(&:title)
+  
+    expect(displayed_posts).to match_array(expected_posts)
+  end
+  
 end

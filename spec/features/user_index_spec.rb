@@ -10,7 +10,7 @@ RSpec.feature 'User index page', type: :feature do
     end
 
     @user2 = User.create(name: 'Tumaini',
-                         photo: 'https://image.com/image.jpg', bio: 'Text for Bio', posts_counter: 0)
+                         photo: 'https://www.istockphoto.com/photo.jpg', bio: 'Text for Bio', posts_counter: 0)
   end
 
   scenario 'I can see the username of all other users' do

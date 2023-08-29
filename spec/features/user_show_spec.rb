@@ -54,8 +54,6 @@ RSpec.feature "User show page", type: :feature do
     expect(page).to have_content(first_post_title)
   end
 
-  
-
   scenario "When I click to see all posts, it redirects me to the user's post's index page" do
     visit user_path(@user)
     click_link("See all posts")

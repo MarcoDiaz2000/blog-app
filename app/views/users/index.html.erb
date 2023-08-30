@@ -1,4 +1,7 @@
 <h1>This is a list of users</h1>
+<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+
+
 <% @users.each do |user| %>
   <%= link_to user_path(user), class: "user-row-link" do %>
     <div class="user-row">

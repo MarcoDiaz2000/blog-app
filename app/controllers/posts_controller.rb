@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
   def index
     @user = User.includes(posts: %i[comments likes]).find(params[:user_id])
   end

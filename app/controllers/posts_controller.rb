@@ -1,9 +1,8 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   before_action :authenticate_user!, only: %i[new create]
 
   def destroy
-    @post = Post.find(params[:id])
-    authorize! :destroy, @post
     author = @post.author
     @post.destroy
     redirect_to user_posts_path(author), notice: 'Post was successfully deleted.'

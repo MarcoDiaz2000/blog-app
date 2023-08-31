@@ -12,17 +12,18 @@
     <%= @post.text %>
   </div>
 </div>
-
 <div class="comments-container">
   <% @comments.each do |comment| %>
   <%= "Comments" %>
     <div class="comment">
       <span class="comment-author"><%= comment.author.name %>:</span>
       <span class="comment-text"><%= comment.text %></span>
+              <% if can?(:destroy, comment) %>
+          <%= button_to 'Delete Comment', user_post_comment_path(@user, @post, comment), method: :delete, class: "delete-btn" %>
+        <% end %>
     </div>
   <% end %>
 </div>
-
 <%= form_with(model: [ @user, @post, @post.comments.new ], local: true) do |form| %>
   <div class="post-detail-row">
     <%= form.label :text, "Publish your Comment" %>
@@ -30,7 +31,6 @@
   </div>
   <%= form.submit "Publish Comment", class: "custom-button" %>
 <% end %>
-
 <%= form_with url: user_post_likes_path(@post.author, @post) do |form| %>
   <%= form.submit 'Like', class: 'custom-button' %>
 <% end %>

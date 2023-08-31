@@ -1,4 +1,13 @@
 class CommentsController < ApplicationController
+  def destroy
+    @comment = Comment.find(params[:id])
+    authorize! :destroy, @comment
+    post = @comment.post
+    user = post.author
+    @comment.destroy
+    redirect_to user_post_path(user, post), notice: 'Comment was successfully deleted.'
+  end
+
   def create
     @user = User.find(params[:user_id])
     @post = Post.find(params[:post_id])

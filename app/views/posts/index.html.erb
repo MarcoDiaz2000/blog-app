@@ -1,3 +1,4 @@
+<div class="custom-box">
 <% @user.three_most_recent_posts.each do |post| %>
   <%= link_to user_post_path(@user, post), class: "post-link" do %>
     <div class="post-row">
@@ -29,3 +30,4 @@
 <% flash.each do |key, message| %>
   <div class="<%= key %>"><%= message %></div>
 <% end %>
+</div>

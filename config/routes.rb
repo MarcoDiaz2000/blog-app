@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
-
-  devise_scope :user do
-    get 'users/sign_out' => 'devise/sessions#destroy'
+  devise_for :users, skip: [:sessions]
+  as :user do
+    get 'login' => 'devise/sessions#new', as: :new_user_session
+    post 'login' => 'devise/sessions#create', as: :user_session
+    get 'logout' => 'devise/sessions#destroy', as: :destroy_user_session
   end
 
   root 'users#index'

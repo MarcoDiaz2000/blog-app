@@ -1,16 +1,4 @@
-<h1>Here is a list of posts for a given user</h1>
-<%= link_to user_path(@user), class: "user-row-link" do %>
-  <div class="user-row">
-    <div class="user-photo">
-      <%= image_tag @user.photo if @user.photo.present? %>
-    </div>
-    <div class="user-info">
-      <h2><%= @user.name %></h2>
-      <div class="post-counter">Number of posts: <%= @user.posts.count %></div>
-    </div>
-  </div>
-<% end %>
-
+<div class="custom-box">
 <% @user.three_most_recent_posts.each do |post| %>
   <%= link_to user_post_path(@user, post), class: "post-link" do %>
     <div class="post-row">
@@ -22,17 +10,24 @@
       </div>
     </div>
   <% end %>
-
+  <% if can?(:destroy, post) %>
+    <%= button_to 'Delete Post', user_post_path(@user, post), method: :delete, class: 'delete-btn' %>
+  <% end %>
   <div class="comments-container">
     <% post.five_most_recent_comments.each do |comment| %>
       <div class="comment">
         <span class="comment-author"><%= comment.author.name %>:</span>
         <span class="comment-text"><%= comment.text %></span>
+        <% if can?(:destroy, comment) %>
+          <%= button_to 'Delete Comment', user_post_comment_path(@user, post, comment), method: :delete, class: "delete-btn" %>
+        <% end %>
       </div>
     <% end %>
   </div>
 <% end %>
-
 <%= link_to 'Create a new post', new_user_post_path(@user), class: 'see-all-posts-btn' %>
-
 <%= link_to 'Pagination', user_posts_path(@user), class: 'pagination see-all-posts-btn' %>
+<% flash.each do |key, message| %>
+  <div class="<%= key %>"><%= message %></div>
+<% end %>
+</div>

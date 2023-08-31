@@ -33,3 +33,25 @@
   border-radius: 3px;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
 }
+
+.custom-box {
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  text-align: center;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: auto;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.delete-btn:hover {
+  background-color: #db3939;
+}

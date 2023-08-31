@@ -21,3 +21,13 @@
   display: block;
   margin: 10px auto;
 }
+.form-field1 {
+  margin-bottom: 25px;
+}
+.custom-input1 {
+  width: 400px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+}

@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to user_posts_path(author), notice: 'Post was successfully deleted.'
   end
-  
+
   def index
     @user = User.includes(posts: %i[comments likes]).find(params[:user_id])
   end

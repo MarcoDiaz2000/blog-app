@@ -2,7 +2,7 @@
 <%= link_to user_path(@user), class: "user-row-link" do %>
   <div class="user-row">
     <div class="user-photo">
-      <%= image_tag @user.photo %>
+      <%= image_tag @user.photo if @user.photo.present? %>
     </div>
     <div class="user-info">
       <h2><%= @user.name %></h2>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Rswag::Api::Engine => '/api-docs'
+  mount Rswag::Ui::Engine => '/api-docs'
   devise_for :users, skip: [:sessions]
   as :user do
     get 'login' => 'devise/sessions#new', as: :new_user_session

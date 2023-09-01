@@ -55,6 +55,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 6.0'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'rspec-rails'
+  gem 'rswag-specs'
 end
 
 gem 'rails-controller-testing'
@@ -75,3 +77,4 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'devise'
 
 gem 'cancancan'
+
